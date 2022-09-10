@@ -12,7 +12,7 @@ public class DropZone : MonoBehaviour, IDropHandler
         Debug.Log ("OnDrop to" + gameObject.name);
 
         draggable d = eventData.pointerDrag.GetComponent<draggable>();
-        if(d != null && typeOfItem == d.typeOfItem){
+        if(d != null && typeOfItem == d.typeOfItem && d.transform.parent == this.transform.parent){
             if(typeOfItem == d.typeOfItem || typeOfItem== draggable.Slot.INVENTORY){
                 d.parentToReturn= this.transform;
             }    
@@ -25,7 +25,6 @@ public class DropZone : MonoBehaviour, IDropHandler
             GameObject child = this.transform.GetChild(i).gameObject;
             draggable childDrag = child.GetComponent<draggable>();
             pointsTotal+= childDrag.points;
-          //  Debug.Log("tem: "+pointsTotal);
         }
     }
 }

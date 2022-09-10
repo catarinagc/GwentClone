@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class GamePoints : MonoBehaviour
 {
-    int gamePoints =0;
+    public int gamePoints =0;
+    public int playerNumber=0;
     public Text gamePointsText;
     
     // Start is called before the first frame update
@@ -25,6 +26,6 @@ public class GamePoints : MonoBehaviour
                 gamePoints+= childScore.score;
             }
         }
-        gamePointsText.text= gamePoints.ToString();
+        gamePointsText.text= "Player " + playerNumber.ToString() + ": " +gamePoints.ToString();
     }
 }
