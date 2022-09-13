@@ -8,11 +8,14 @@ public class GamePoints : MonoBehaviour
     public int gamePoints =0;
     public int playerNumber=0;
     public Text gamePointsText;
-    
+    public string playerName;
+    private bool nameChosen = false;
+  //  GameObject textInputField;
     // Start is called before the first frame update
     void Start()
     {
         gamePointsText.text= gamePoints.ToString();
+       // playerName = textInputField.GetComponent<InputField>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,16 @@ public class GamePoints : MonoBehaviour
                 gamePoints+= childScore.score;
             }
         }
-        gamePointsText.text= "Player " + playerNumber.ToString() + ": " +gamePoints.ToString();
+        if(!nameChosen){
+            gamePointsText.text= "Player " + playerNumber.ToString() + ": " +gamePoints.ToString();
+        }else{
+            gamePointsText.text= playerName + ": " +gamePoints.ToString();
+        }
+        
+    }
+
+    public void ReadNameInput(string name){
+        playerName=name;
+        nameChosen=true;
     }
 }
