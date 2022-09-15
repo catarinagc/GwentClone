@@ -21,10 +21,12 @@ public class DropZone : MonoBehaviour, IDropHandler
 
     public void updatePoints(){
         pointsTotal=0;
-        for(int i =1; i< this.transform.childCount; i++){
-            GameObject child = this.transform.GetChild(i).gameObject;
-            draggable childDrag = child.GetComponent<draggable>();
-            pointsTotal+= childDrag.points;
+        for(int i =0; i< this.transform.childCount; i++){
+            if(this.transform.GetChild(i).tag == "Card"){
+                GameObject child = this.transform.GetChild(i).gameObject;
+                draggable childDrag = child.GetComponent<draggable>();
+                pointsTotal+= childDrag.points;
+            }
         }
     }
 }

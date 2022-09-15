@@ -20,4 +20,16 @@ public class SlotScore : MonoBehaviour
         score= d.pointsTotal;
         scoreText.text = d.pointsTotal.ToString() + " POINTS";
     }
+
+    public void RestartPoints(){
+        DropZone d = gameObject.GetComponent<DropZone>();
+        d.pointsTotal=0;
+        score= d.pointsTotal;
+        scoreText.text = d.pointsTotal.ToString() + " POINTS";
+
+        //nao funciona pois o childCount nao da update logo
+        // d.updatePoints();
+        // score= d.pointsTotal;
+        // scoreText.text = d.pointsTotal.ToString() + " POINTS";
+    }
 }

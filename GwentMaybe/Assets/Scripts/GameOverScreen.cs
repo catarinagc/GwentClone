@@ -7,15 +7,18 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     public Text winnerText;
+    public GameObject gameScreen;
 
-    public void Setup(int playerWinner) {
+    public void Setup(GameObject player) {
         gameObject.SetActive(true);
-        if(playerWinner==0){
-             winnerText.text = "Draw";
-        } else{
-            winnerText.text = "Player " + playerWinner.ToString() + " wins";
+        if(player == null && !gameScreen.GetComponent<GameScreen>().hasGameFinished()){
+            winnerText.text= "Game not finished";
+            return;
+        } else if(player == null){
+            winnerText.text= "Draw!";
+            return;
         }
-    
+        winnerText.text = player.GetComponent<GamePoints>().playerName + " wins!";    
     }
 
     public void RestartGame(){
