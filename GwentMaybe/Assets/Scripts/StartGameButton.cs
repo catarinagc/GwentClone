@@ -11,6 +11,6 @@ public class StartGameButton : MonoBehaviour
     public void OnClick(){
         startScreen.SetActive(false);
         gameScreen.SetActive(true);
-       // SceneManager.LoadScene(0);
+        gameObject.GetComponent<StopMusic>().changeMusic();
     }
 }
