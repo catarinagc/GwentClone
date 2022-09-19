@@ -7,11 +7,11 @@ public class GameScreen : MonoBehaviour
     //talvez retirar rounds
     public GameObject player1;
     public GameObject player2;
-    private int player1Wins=0;
-    private int player2Wins=0;
+    public int player1Wins=0;
+    public int player2Wins=0;
     private int roundNumber=1;
     public GameObject endGameButton;
-    //private GameObject roundWinnerPlayer;
+    private GameObject roundWinnerPlayer;
 
     public void NewRound(){
         roundWinner();
@@ -33,11 +33,14 @@ public class GameScreen : MonoBehaviour
         int player2Points = player2.GetComponent<GamePoints>().gamePoints;
         if(player1Points>player2Points){
             player1Wins++;
+            roundWinnerPlayer=player1;
         }else if(player1Points<player2Points){
             player2Wins++;
+            roundWinnerPlayer=player2;
         }else{
             player1Wins++;
             player2Wins++;
+            roundWinnerPlayer=null;
         }
     }
 
@@ -70,4 +73,8 @@ public class GameScreen : MonoBehaviour
         player2.GetComponent<GamePoints>().RestartPoints();
     }
    
+    public GameObject getRoundWinner(){
+        return roundWinnerPlayer;
+    }
+
 }
