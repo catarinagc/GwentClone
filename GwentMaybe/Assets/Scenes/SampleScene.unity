@@ -576,11 +576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1632274050798693030, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 637
+      value: 509.4
       objectReference: {fileID: 0}
     - target: {fileID: 1632274050798693030, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.487324
+      value: -25.139812
       objectReference: {fileID: 0}
     - target: {fileID: 1632274051044856478, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchorMax.y
@@ -592,11 +592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1632274051044856478, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 637
+      value: 509.4
       objectReference: {fileID: 0}
     - target: {fileID: 1632274051044856478, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.705666
+      value: -23.312695
       objectReference: {fileID: 0}
     - target: {fileID: 9132756947846167817, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_TagString
@@ -664,16 +664,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132756949504134196, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 637
+      value: 509.4
       objectReference: {fileID: 0}
     - target: {fileID: 9132756949504134196, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.7584
+      value: -23.666752
       objectReference: {fileID: 0}
     - target: {fileID: 9132756949978545379, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 9132756949978545382, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
+      propertyPath: GameScreen
+      value: 
+      objectReference: {fileID: 997686116}
+    - target: {fileID: 9132756949978545382, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
+      propertyPath: animation1
+      value: 
+      objectReference: {fileID: 2070962061}
+    - target: {fileID: 9132756949978545382, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
+      propertyPath: animation2
+      value: 
+      objectReference: {fileID: 1726542585}
     - target: {fileID: 9132756949978545382, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: playerNumber
       value: 2
@@ -1524,8 +1536,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 1153405440}
   player2: {fileID: 1351487}
-  player1Wins: 0
-  player2Wins: 0
   endGameButton: {fileID: 1161130675}
 --- !u!82 &997686122
 AudioSource:
@@ -2134,11 +2144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1632274050798693030, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 637
+      value: 509.4
       objectReference: {fileID: 0}
     - target: {fileID: 1632274050798693030, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.179497
+      value: -24.69598
       objectReference: {fileID: 0}
     - target: {fileID: 1632274050798693031, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_Name
@@ -2154,11 +2164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1632274051044856478, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 637
+      value: 509.4
       objectReference: {fileID: 0}
     - target: {fileID: 1632274051044856478, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.836876
+      value: -23.632545
       objectReference: {fileID: 0}
     - target: {fileID: 1632274051044856479, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_Name
@@ -2182,11 +2192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132756949504134196, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 637
+      value: 509.4
       objectReference: {fileID: 0}
     - target: {fileID: 9132756949504134196, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30.166924
+      value: -23.893963
       objectReference: {fileID: 0}
     - target: {fileID: 9132756949504134197, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: m_Name
@@ -2196,6 +2206,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 9132756949978545382, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
+      propertyPath: GameScreen
+      value: 
+      objectReference: {fileID: 997686116}
+    - target: {fileID: 9132756949978545382, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
+      propertyPath: animation1
+      value: 
+      objectReference: {fileID: 4978893970700716876}
+    - target: {fileID: 9132756949978545382, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
+      propertyPath: animation2
+      value: 
+      objectReference: {fileID: 1669284861}
     - target: {fileID: 9132756949978545382, guid: 9adc024c2ba7d8748902961368443cda, type: 3}
       propertyPath: playerNumber
       value: 1
@@ -2583,10 +2605,6 @@ MonoBehaviour:
   player1: {fileID: 1153405440}
   player2: {fileID: 1351487}
   GameScreen: {fileID: 997686116}
-  Player1Point1: {fileID: 4978893970700716876}
-  Player1Point2: {fileID: 1669284861}
-  Player2Point1: {fileID: 2070962061}
-  Player2Point2: {fileID: 0}
 --- !u!1 &1291208945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,6 +3868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

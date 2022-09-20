@@ -7,10 +7,13 @@ public class GamePoints : MonoBehaviour
 {
     public int gamePoints =0;
     public int playerNumber=0;
-    public Text gamePointsText;
     public string playerName;
     private bool nameChosen = false;
- 
+    [SerializeField] private Text gamePointsText;
+    [SerializeField] private GameObject GameScreen;
+    [SerializeField] private GameObject animation1;
+    [SerializeField] private GameObject animation2;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,7 @@ public class GamePoints : MonoBehaviour
         gamePoints=0;
         for(int i=0; i<this.transform.childCount;i++){
             GameObject child = this.transform.GetChild(i).gameObject;
-            if(child.name == "Tabletop" || child.name == "Tabletop (1)" || child.name == "Tabletop (2)"){
+            if(child.tag==("Tabletop")){
                 SlotScore childScore = child.GetComponent<SlotScore>();
                 gamePoints+= childScore.score;
             }
@@ -47,6 +50,15 @@ public class GamePoints : MonoBehaviour
                 childScore.RestartPoints();
                 gamePoints+= childScore.score;
             }
+        }
+    }
+
+    public void startAnim(){
+        int points=GameScreen.GetComponent<GameScreen>().getPlayerWins(this.gameObject);
+        if(points==1){
+            animation1.GetComponent<TriggerAnimation>().OnTriggerStart();
+        } else{
+            animation2.GetComponent<TriggerAnimation>().OnTriggerStart();
         }
     }
 }

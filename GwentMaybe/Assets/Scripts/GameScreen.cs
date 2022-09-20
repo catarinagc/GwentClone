@@ -4,37 +4,32 @@ using UnityEngine;
 
 public class GameScreen : MonoBehaviour
 {
-    //talvez retirar rounds
     public GameObject player1;
     public GameObject player2;
-    public int player1Wins=0;
-    public int player2Wins=0;
-    private int roundNumber=1;
-    public GameObject endGameButton;
+    private int player1Wins=0;
+    private int player2Wins=0;
     private GameObject roundWinnerPlayer;
+    [SerializeField] private GameObject endGameButton;
 
     public void NewRound(){
         roundWinner();
         if(hasGameFinished()){
             endGame();
-            return;
         }
-        //roundNumber++;
-
     }
 
     public void endGame(){
-        //roundWinner();
         endGameButton.GetComponent<EndGame>().OnClick();
     }
 
     public void roundWinner(){
         int player1Points = player1.GetComponent<GamePoints>().gamePoints;
         int player2Points = player2.GetComponent<GamePoints>().gamePoints;
-        if(player1Points>player2Points){
+        int compare = player1Points.CompareTo(player2Points);
+        if(compare==1){
             player1Wins++;
             roundWinnerPlayer=player1;
-        }else if(player1Points<player2Points){
+        }else if(compare==-1){
             player2Wins++;
             roundWinnerPlayer=player2;
         }else{
@@ -46,9 +41,10 @@ public class GameScreen : MonoBehaviour
 
     public GameObject gameWinner(){
         GameObject finalWinner;
-        if(player1Wins>player2Wins){
+        int compare=player1Wins.CompareTo(player2Wins);
+        if(compare==1){
             finalWinner= player1;
-        }else if(player1Wins<player2Wins){
+        }else if(compare==-1){
             finalWinner= player2;
         } else{
             finalWinner= null;
@@ -77,4 +73,11 @@ public class GameScreen : MonoBehaviour
         return roundWinnerPlayer;
     }
 
+    public int getPlayerWins(GameObject player){
+        if(player == player1){
+            return player1Wins;
+        }else{
+            return player2Wins;
+        }
+    }
 }

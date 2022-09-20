@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class SlotScore : MonoBehaviour
 {
     public int score =0;
-    public Text scoreText;
+    [SerializeField] private Text scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +27,5 @@ public class SlotScore : MonoBehaviour
         d.pointsTotal=0;
         score= d.pointsTotal;
         scoreText.text = d.pointsTotal.ToString() + " POINTS";
-
-        //nao funciona pois o childCount nao da update logo
-        // d.updatePoints();
-        // score= d.pointsTotal;
-        // scoreText.text = d.pointsTotal.ToString() + " POINTS";
     }
 }

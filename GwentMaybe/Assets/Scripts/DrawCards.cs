@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class DrawCards : MonoBehaviour
 {
-    public GameObject cards1;
-    public GameObject cards2;
-    public GameObject playerArea1;
-    public GameObject playerArea2;
+    [SerializeField] private GameObject cards1;
+    [SerializeField] private GameObject cards2;
+    [SerializeField] private GameObject playerArea1;
+    [SerializeField] private GameObject playerArea2;
     public enum Slot{ RANGE, CLOSE, SIEGE, INVENTORY };
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    public void OnClick(){
+    private void OnClick(){
         for (int i=0; i<5; i++){
             GameObject playerCard1 = Instantiate(cards1);
             GameObject playerCard2 = Instantiate(cards2);

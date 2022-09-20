@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StopMusic : MonoBehaviour
 {
-    public GameObject stopScreen;
-    public GameObject startScreen;
+    [SerializeField] private GameObject stopScreen;
+    [SerializeField] private GameObject startScreen;
 
     public void changeMusic(){
         stopScreen.GetComponent<AudioSource>().mute =true;

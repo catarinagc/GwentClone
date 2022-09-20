@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public Text winnerText;
-    public GameObject gameScreen;
+    [SerializeField] private Text winnerText;
+    [SerializeField] private GameObject gameScreen;
 
     public void Setup(GameObject player) {
         gameObject.SetActive(true);

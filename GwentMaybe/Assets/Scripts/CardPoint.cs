@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class CardPoint : MonoBehaviour
 {
-    int value=0;
-    //String type=null;
-    public Text valueText;
-    public Text typeText;
+    private int value=0;
+    [SerializeField] private Text valueText;
+    [SerializeField] private Text typeText;
+
     // Start is called before the first frame update
     void Start()
     {
         valueText.text= value.ToString();
-       // typeText.text= type;
     }
 
     // Update is called once per frame
@@ -21,7 +20,6 @@ public class CardPoint : MonoBehaviour
     {
         draggable d = gameObject.GetComponent<draggable>();
         valueText.text = d.points.ToString();
-
         typeText.text = d.typeOfItem.ToString();
     }
 }
