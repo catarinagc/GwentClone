@@ -35,6 +35,13 @@ public class draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
     public void UpdateSize(){
-       this.transform.localScale = new Vector3(this.transform.localScale.y*0.7f,0.7f,1);
+        Vector3 parentScale = this.transform.parent.lossyScale;
+        GameObject parent = this.transform.parent.gameObject;
+        this.transform.SetParent(null);
+        this.transform.localScale= new Vector3(parentScale.y *0.7f, parentScale.y*0.9f,parentScale.z);
+        this.transform.SetParent(parent.transform);
+        //this.transform.localScale = new Vector3(this.transform.localScale.y*0.7f,0.7f,1);
+
+
     }
 }
