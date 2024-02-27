@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//inutil TODO: delete
 public class GamePoints : MonoBehaviour
 {
     public int gamePoints =0;
@@ -24,7 +25,7 @@ public class GamePoints : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+/*     void Update()
     {
         gamePoints=0;
         for(int i=0; i<this.transform.childCount;i++){
@@ -34,8 +35,8 @@ public class GamePoints : MonoBehaviour
                 gamePoints+= childScore.score;
             }
         }
-        gamePointsText.text= playerName + ": " +gamePoints.ToString();
-    }
+        //gamePointsText.text= playerName + ": " +gamePoints.ToString();
+    } */
 
     public void ReadNameInput(string name){
         playerName=name;

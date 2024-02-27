@@ -18,7 +18,7 @@ public class GameOverScreen : MonoBehaviour
             winnerText.text= "Draw!";
             return;
         }
-        winnerText.text = player.GetComponent<GamePoints>().playerName + " wins!";    
+        winnerText.text = player.GetComponent<Player>().getName() + " wins!";    
     }
 
     public void RestartGame(){

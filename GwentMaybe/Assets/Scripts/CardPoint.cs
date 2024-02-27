@@ -5,21 +5,49 @@ using UnityEngine.UI;
 
 public class CardPoint : MonoBehaviour
 {
-    private int value=0;
     [SerializeField] private Text valueText;
     [SerializeField] private Text typeText;
+    [SerializeField] private Text specialText;
+    private bool inPlay = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        valueText.text= value.ToString();
+        CardScript cs = gameObject.GetComponent<CardScript>();
+        valueText.text = cs.getValue().ToString();
+        typeText.text = cs.getType().ToString();
+
+        if(cs.getIsSpecial())
+            specialText.text = cs.getSpecialType().ToString();
+        else
+            specialText.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void changeInPlay(bool inPlay)
     {
+        this.inPlay = inPlay;
+
         draggable d = gameObject.GetComponent<draggable>();
-        valueText.text = d.points.ToString();
-        typeText.text = d.typeOfItem.ToString();
+        if(!inPlay)
+        {
+            d.enabled = false;
+            if(this.transform.parent.gameObject.tag == "Hand" )
+            {
+                valueText.enabled = false;
+                typeText.enabled = false;
+                specialText.enabled = false;
+            }
+        }
+        else
+        {
+            d.enabled = true;
+            if(this.transform.parent.gameObject.tag == "Hand" )
+            {
+                valueText.enabled = true;
+                typeText.enabled = true;
+                if(this.GetComponent<CardScript>().getIsSpecial())
+                    specialText.enabled = true;
+            }
+        }
     }
 }

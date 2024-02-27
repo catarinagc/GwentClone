@@ -15,6 +15,6 @@ public class EndGame : MonoBehaviour
              endScreen.GetComponent<GameOverScreen>().Setup(winner);
              return;
         }
-        endScreen.GetComponent<GameOverScreen>().Setup(null);        
+        endScreen.GetComponent<GameOverScreen>().Setup(null);       
     }
 }

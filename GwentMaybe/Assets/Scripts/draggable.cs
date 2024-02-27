@@ -26,14 +26,9 @@ public class draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         this.transform.SetParent(parentToReturn);
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-        //UpdateSize();
         this.transform.parent.gameObject.GetComponent<DropZone>().updatePoints();
     }
-
-    public void randomType(){
-        typeOfItem= (Slot)Random.Range(0,3);
-    }
-
+/* 
     public void UpdateSize(){
         Vector3 parentScale = this.transform.parent.lossyScale;
         GameObject parent = this.transform.parent.gameObject;
@@ -43,5 +38,5 @@ public class draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //this.transform.localScale = new Vector3(this.transform.localScale.y*0.7f,0.7f,1);
 
 
-    }
+    } */
 }
